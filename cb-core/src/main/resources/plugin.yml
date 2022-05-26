@@ -6,4 +6,15 @@ author: Lasse
 main: net.citybuildnetwork.core.bootstrap.spigot.SpigotBootstrap
 commands:
   coins:
+  gamemode:
+    aliases: gm
   vanish:
+  teleport:
+    aliases: tp
+  tphere:
+    aliases: teleporthere
+  invsee:
+    aliases: inventorysee
+  speed:
+  tpall:
+    aliases: teleportall
