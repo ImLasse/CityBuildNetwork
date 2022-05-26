@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>cb-lobby</module>
-        <module>cb-core</module>
+        <module>frozenfactory-core</module>
+        <module>frozenfactory-lobby</module>
+        <module>frozenfactory-proxymanager</module>
     </modules>
 
     <properties>

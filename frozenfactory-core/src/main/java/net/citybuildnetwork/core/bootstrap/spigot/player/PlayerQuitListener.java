@@ -11,5 +11,8 @@ public class PlayerQuitListener implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onDisconnect(PlayerQuitEvent event) {
         Player player = event.getPlayer();
+
+        event.setQuitMessage(null);
+
     }
 }

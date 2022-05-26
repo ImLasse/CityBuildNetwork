@@ -25,7 +25,7 @@ public class InvseeCommand implements CommandExecutor {
             final Player player = (Player) commandSender;
             final CBPlayer cbPlayer = new CBPlayer(player.getName(), player.getUniqueId());
 
-            if (player.hasPermission("flamingfactory.administration.invsee")) {
+            if (player.hasPermission("frozenfactory.administration.invsee")) {
 
                 if (args.length == 0) {
                     cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "invsee (Player)");
@@ -41,7 +41,7 @@ public class InvseeCommand implements CommandExecutor {
                     player.openInventory(Bukkit.getPlayer(name).getInventory());
 
                     player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10,10);
-                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast das §e§oInventar §7von §e§o " + name + " §7geöffnet§8.");
+                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast das §b§oInventar §7von §b§o " + name + " §7geöffnet§8.");
 
 
 

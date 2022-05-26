@@ -23,7 +23,7 @@ public class ProxyBootstrap extends Plugin {
         this.databaseConnector.createSqlTables();
         this.pluginManager = ProxyServer.getInstance().getPluginManager();
 
-        System.out.println("| CityBuildBase | ProxyBootstrap initialized!");
+        System.out.println("| FrozenFactoryBase | ProxyBootstrap initialized!");
 
         registerListeners();
         registerCommands();

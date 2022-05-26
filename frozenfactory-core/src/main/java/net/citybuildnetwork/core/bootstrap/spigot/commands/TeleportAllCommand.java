@@ -25,7 +25,7 @@ public class TeleportAllCommand implements CommandExecutor {
             final CBPlayer cbPlayer = new CBPlayer(player.getName(), player.getUniqueId());
 
             if (commandSender instanceof Player) {
-                if (player.hasPermission("flamingfactory.administration.tpall")) {
+                if (player.hasPermission("frozenfactory.administration.tpall")) {
 
                     if (args.length == 0) {
 
@@ -37,7 +37,7 @@ public class TeleportAllCommand implements CommandExecutor {
                         }
 
                         player.playSound(player.getLocation(), Sound.ITEM_ARMOR_EQUIP_NETHERITE, 10,10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast alle §e§oSpieler §7zu §e§odir §7teleportiert§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast alle §b§oSpieler §7zu §b§odir §7teleportiert§8.");
 
                     } else if (args.length == 1) {
                         String name = args[0];
@@ -55,7 +55,7 @@ public class TeleportAllCommand implements CommandExecutor {
                         }
 
                         player.playSound(player.getLocation(), Sound.ITEM_ARMOR_EQUIP_NETHERITE, 10,10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast alle §e§oSpieler §7zu §e§o" + name + " §7teleportiert§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast alle §b§oSpieler §7zu §b§o" + name + " §7teleportiert§8.");
 
                     } else {
                         cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "tpall (Player)");

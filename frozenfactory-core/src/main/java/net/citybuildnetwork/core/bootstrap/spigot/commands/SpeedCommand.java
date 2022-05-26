@@ -23,7 +23,7 @@ public class SpeedCommand implements CommandExecutor {
             final Player player = (Player) commandSender;
             final CBPlayer cbPlayer = new CBPlayer(player.getName(), player.getUniqueId());
 
-            if (player.hasPermission("flamingfactory.administration.speed")) {
+            if (player.hasPermission("frozenfactory.administration.speed")) {
 
                 if (args.length == 0) {
                     cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "speed (Speed | 1-10) (Player)");
@@ -42,10 +42,10 @@ public class SpeedCommand implements CommandExecutor {
                     }
                     if (player.isFlying()) {
                         player.setFlySpeed((float) speed / 10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Deine §e§oFluggeschwindigkeit §7wurde auf §e§o" + speed + " §7gesetzt§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Deine §b§oFluggeschwindigkeit §7wurde auf §b§o" + speed + " §7gesetzt§8.");
                     } else {
                         player.setWalkSpeed((float) speed / 10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Deine §e§oLaufgeschwindigkeit §7wurde auf §e§o" + speed + " §7gesetzt§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Deine §b§oLaufgeschwindigkeit §7wurde auf §b§o" + speed + " §7gesetzt§8.");
                     }
 
                 } else if(args.length == 2) {
@@ -70,10 +70,10 @@ public class SpeedCommand implements CommandExecutor {
                     }
                     if (Bukkit.getPlayer(name).isFlying()) {
                         Bukkit.getPlayer(name).setFlySpeed((float) speed / 10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, "Du hast die §e§oFluggeschwindigkeit §7von §e§o" + name + " §7auf §e§o" + speed + " §7gesetzt§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, "Du hast die §b§oFluggeschwindigkeit §7von §b§o" + name + " §7auf §b§o" + speed + " §7gesetzt§8.");
                     } else {
                         Bukkit.getPlayer(name).setWalkSpeed((float) speed / 10);
-                        cbPlayer.sendMessageToSpigotPlayer(player, "Du hast die §e§oLaufgeschwindigkeit §7von §e§o" + name + " §7auf §e§o" + speed + " §7gesetzt§8.");
+                        cbPlayer.sendMessageToSpigotPlayer(player, "Du hast die §b§oLaufgeschwindigkeit §7von §b§o" + name + " §7auf §b§o" + speed + " §7gesetzt§8.");
                     }
 
                 } else {

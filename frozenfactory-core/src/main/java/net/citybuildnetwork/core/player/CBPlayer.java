@@ -49,27 +49,27 @@ public class CBPlayer {
     }
 
     public void sendNoPermissionMessageToProxyPlayer(final ProxiedPlayer proxiedPlayer) {
-        proxiedPlayer.sendMessage(Core.getPrefix() + "§7Du bist §cnicht §7berechtigt diesen §eCommand auszuführen§8.");
+        proxiedPlayer.sendMessage(Core.getPrefix() + "§7Du bist §cnicht §7berechtigt diesen §bCommand auszuführen§8.");
     }
 
     public void sendNoPermissionMessageToSpigotPlayer(final org.bukkit.entity.Player player) {
-        player.sendMessage(Core.getPrefix() + "§7Du bist §cnicht §7berechtigt diesen §eCommand auszuführen§8.");
+        player.sendMessage(Core.getPrefix() + "§7Du bist §cnicht §7berechtigt diesen §bCommand auszuführen§8.");
     }
 
     public void sendWrongUsageMessageToProxyPlayer(final ProxiedPlayer player, String commandUsage) {
-        player.sendMessage(Core.getPrefix() + "§7Falsche Benutzung§8! §7Bitte benutze §8'§e/" + commandUsage + "§8'");
+        player.sendMessage(Core.getPrefix() + "§7Falsche Benutzung§8! §7Bitte benutze §8'§b/" + commandUsage + "§8'");
     }
 
     public void sendWrongUsageMessageToSpigotPlayer(final org.bukkit.entity.Player player, String commandUsage) {
-        player.sendMessage(Core.getPrefix() + "§7Falsche Benutzung§8! §7Bitte benutze §8'§e/" + commandUsage + "§8'");
+        player.sendMessage(Core.getPrefix() + "§7Falsche Benutzung§8! §7Bitte benutze §8'§b/" + commandUsage + "§8'");
     }
 
     public void sendPlayerNotFoundMessageToProxyPlayer(final ProxiedPlayer player) {
-        player.sendMessage(Core.getPrefix() + "§7Dieser §eSpieler §7konnte §cnicht §7gefunden werden§8.");
+        player.sendMessage(Core.getPrefix() + "§7Dieser §bSpieler §7konnte §cnicht §7gefunden werden§8.");
     }
 
     public void sendPlayerNotFoundMessageToSpigotPlayer(final org.bukkit.entity.Player player) {
-        player.sendMessage(Core.getPrefix() + "§7Dieser §eSpieler §7konnte §cnicht §7gefunden werden§8.");
+        player.sendMessage(Core.getPrefix() + "§7Dieser §bSpieler §7konnte §cnicht §7gefunden werden§8.");
     }
 
 }

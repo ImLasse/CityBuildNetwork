@@ -9,6 +9,7 @@ commands:
   gamemode:
     aliases: gm
   vanish:
+    aliases: v
   teleport:
     aliases: tp
   tphere:

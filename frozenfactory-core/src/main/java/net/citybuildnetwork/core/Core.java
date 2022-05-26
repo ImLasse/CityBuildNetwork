@@ -11,7 +11,7 @@ import net.citybuildnetwork.core.player.PlayerPropertyHandler;
  */
 public class Core {
 
-    private static String Prefix = "§8» §6Flaming§eFactory §8- §7";
+    private static String Prefix = "§8» §3Frozen§bFactory §8- §7";
 
     private static final DataBaseConnector databaseConnector = new DataBaseConnector();
     private static final PlayerPropertyHandler playerPropertyHandler = new PlayerPropertyHandler();

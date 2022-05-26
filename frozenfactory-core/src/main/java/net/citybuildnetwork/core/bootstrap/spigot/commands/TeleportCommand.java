@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author ImLxsse (lasse.huenermund@gmx.de)
  */
-public class TeleportHereCommand implements CommandExecutor {
+public class TeleportCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (commandSender instanceof Player) {
@@ -24,10 +24,12 @@ public class TeleportHereCommand implements CommandExecutor {
             final Player player = (Player) commandSender;
             final CBPlayer cbPlayer = new CBPlayer(player.getName(), player.getUniqueId());
 
-            if (player.hasPermission("flamingfactory.administration.teleport")) {
+            if (player.hasPermission("frozenfactory.administration.teleport")) {
 
                 if (args.length == 0) {
-                    cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "tphere (Player)");
+                    player.teleport(Bukkit.getOnlinePlayers().stream().skip((int) (Bukkit.getOnlinePlayers().size() * Math.random())).findFirst().orElse(null).getLocation());
+                    player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10,10);
+                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du wurdest zu einem §b§ozufälligen Spieler §7teleportiert§8.");
                 } else if (args.length == 1) {
                     String name = args[0];
 
@@ -36,19 +38,19 @@ public class TeleportHereCommand implements CommandExecutor {
                         return true;
                     }
 
-                    Bukkit.getPlayer(name).teleport(player);
-                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast §e§o" + name + " §7zu §e§odir §7teleportiert§8.");
-                    player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10,10);
+                    player.teleport(Bukkit.getPlayer(name));
+                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du wurdest zu §b§o" + name + " §7teleportiert§8.");
 
                 } else if (args.length >= 3) {
-                    cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "tphere (Player)");
-                }
+                cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "teleport (Player)");
+            }
 
             } else {
                 cbPlayer.sendNoPermissionMessageToSpigotPlayer(player);
             }
 
         }
+
         return false;
     }
 }

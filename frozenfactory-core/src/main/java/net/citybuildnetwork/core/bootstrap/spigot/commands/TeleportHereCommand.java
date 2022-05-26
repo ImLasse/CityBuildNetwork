@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author ImLxsse (lasse.huenermund@gmx.de)
  */
-public class TeleportCommand implements CommandExecutor {
+public class TeleportHereCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         if (commandSender instanceof Player) {
@@ -27,9 +27,7 @@ public class TeleportCommand implements CommandExecutor {
             if (player.hasPermission("flamingfactory.administration.teleport")) {
 
                 if (args.length == 0) {
-                    player.teleport(Bukkit.getOnlinePlayers().stream().skip((int) (Bukkit.getOnlinePlayers().size() * Math.random())).findFirst().orElse(null).getLocation());
-                    player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10,10);
-                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du wurdest zu einem §e§ozufälligen Spieler §7teleportiert§8.");
+                    cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "tphere (Player)");
                 } else if (args.length == 1) {
                     String name = args[0];
 
@@ -38,19 +36,19 @@ public class TeleportCommand implements CommandExecutor {
                         return true;
                     }
 
-                    player.teleport(Bukkit.getPlayer(name));
-                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du wurdest zu §e§o" + name + " §7teleportiert§8.");
+                    Bukkit.getPlayer(name).teleport(player);
+                    cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du hast §b§o" + name + " §7zu §b§odir §7teleportiert§8.");
+                    player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 10,10);
 
                 } else if (args.length >= 3) {
-                cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "teleport (Player)");
-            }
+                    cbPlayer.sendWrongUsageMessageToSpigotPlayer(player, "tphere (Player)");
+                }
 
             } else {
                 cbPlayer.sendNoPermissionMessageToSpigotPlayer(player);
             }
 
         }
-
         return false;
     }
 }
