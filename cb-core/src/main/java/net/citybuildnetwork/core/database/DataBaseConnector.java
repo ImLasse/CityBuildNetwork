@@ -52,7 +52,7 @@ public class DataBaseConnector {
         if(!existPlayer(uuid)) {
 
             // Base Users
-            updateSqlConnection("INSERT INTO base_users(uuid, username) VALUES ('" + uuid + "','" + username + "');");
+            updateSqlConnection("INSERT INTO base_users(uuid, username, isVanished) VALUES ('" + uuid + "','" + username + "','" + "false" + "');");
 
             // CoinFactory
             updateSqlConnection("INSERT INTO base_coins (uuid, coins) VALUES ('" + uuid + "','0');");
