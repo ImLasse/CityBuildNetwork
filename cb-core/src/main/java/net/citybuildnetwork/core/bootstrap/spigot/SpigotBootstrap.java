@@ -2,6 +2,7 @@ package net.citybuildnetwork.core.bootstrap.spigot;
 
 import net.citybuildnetwork.core.Core;
 import net.citybuildnetwork.core.bootstrap.spigot.commands.CoinsCommand;
+import net.citybuildnetwork.core.bootstrap.spigot.commands.VanishCommand;
 import net.citybuildnetwork.core.bootstrap.spigot.player.PlayerJoinListener;
 import net.citybuildnetwork.core.bootstrap.spigot.player.PlayerQuitListener;
 import net.citybuildnetwork.core.bootstrap.spigot.scoreboard.ScoreboardApi;
@@ -36,6 +37,7 @@ public class SpigotBootstrap extends JavaPlugin {
 
     private void registerCommands() {
         getCommand("coins").setExecutor(new CoinsCommand());
+        getCommand("vanish").setExecutor(new VanishCommand());
     }
 
     private void registerListeners() {

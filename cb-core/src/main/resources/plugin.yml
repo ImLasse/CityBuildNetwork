@@ -6,3 +6,4 @@ author: Lasse
 main: net.citybuildnetwork.core.bootstrap.spigot.SpigotBootstrap
 commands:
   coins:
+  vanish:
