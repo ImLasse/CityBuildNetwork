@@ -26,7 +26,7 @@ public class DataBaseConnector {
     public void createSqlTables() {
         if(connection != null) {
             try {
-                connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS base_users (uuid VARCHAR(100), username VARCHAR(100))");
+                connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS base_users (uuid VARCHAR(100), username VARCHAR(100), isVanished VARCHAR(100))");
                 connection.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS base_coins (uuid VARCHAR(100), coins VARCHAR(100))");
             } catch (SQLException e) {
                 e.printStackTrace();

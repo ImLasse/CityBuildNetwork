@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class VanishCommand implements CommandExecutor {
 
-    private boolean isVanished = true;
+    private boolean isVanished = false;
 
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
@@ -28,14 +28,14 @@ public class VanishCommand implements CommandExecutor {
         final CBPlayer cbPlayer = new CBPlayer(player.getName(), player.getUniqueId());
 
         if(args.length == 0) {
-            if(!isVanished) {
-                isVanished = true;
-                cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du bist nun im §e§oVanish§8-§e§oMode§8!");
-                player.setInvisible(true);
-            } else {
+            if(isVanished) {
                 isVanished = false;
                 cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du bist nun §cnicht §7mehr im §e§oVanish§8-§e§oMode§8!");
                 player.setInvisible(false);
+            } else {
+                isVanished = true;
+                cbPlayer.sendMessageToSpigotPlayer(player, Core.getPrefix() + "§7Du bist nun im §e§oVanish§8-§e§oMode§8!");
+                player.setInvisible(true);
             }
 
         } else {
