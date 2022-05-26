@@ -1,0 +1,8 @@
+name: Core
+description: This is the Core lol
+version: 1.0
+api-version: 1.18
+author: Lasse
+main: net.citybuildnetwork.core.bootstrap.spigot.SpigotBootstrap
+commands:
+  coins:
